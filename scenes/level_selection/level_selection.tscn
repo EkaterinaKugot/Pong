@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scenes/level_selection/level_1.gd" id="2_wig53"]
 [ext_resource type="Script" path="res://scenes/level_selection/back.gd" id="3_5jwxn"]
 
-[node name="level_selection" type="Node2D"]
+[node name="LevelSelection" type="Node2D"]
 
 [node name="Violet2" type="Sprite2D" parent="."]
 position = Vector2(576, 324)

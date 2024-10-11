@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgceni31vwcuu"]
 
-[ext_resource type="Texture2D" uid="uid://dvf040wmfulpo" path="res://assets/winter_bg.png" id="1_63sol"]
-[ext_resource type="Script" path="res://bg/bg_winter.gd" id="1_te0i0"]
-[ext_resource type="Texture2D" uid="uid://bcspabi3ve51f" path="res://assets/winter_back.png" id="3_jon33"]
-[ext_resource type="Texture2D" uid="uid://1ihvdoxrb7ea" path="res://assets/winter_front.png" id="4_a5fs4"]
+[ext_resource type="Texture2D" uid="uid://dvf040wmfulpo" path="res://assets/background/winter_bg.png" id="1_63sol"]
+[ext_resource type="Script" path="res://scenes/bg/bg_winter.gd" id="1_te0i0"]
+[ext_resource type="Texture2D" uid="uid://bcspabi3ve51f" path="res://assets/background/winter_back.png" id="3_jon33"]
+[ext_resource type="Texture2D" uid="uid://1ihvdoxrb7ea" path="res://assets/background/winter_front.png" id="4_a5fs4"]
 
 [node name="bg_winter" type="ParallaxBackground"]
 script = ExtResource("1_te0i0")

@@ -1,29 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://cv4rk1k2onie0"]
+[gd_scene load_steps=5 format=3 uid="uid://dsob7m6gyugc2"]
 
-[ext_resource type="Texture2D" uid="uid://dcg1b1jqru74p" path="res://assets/violet2.png" id="1_7ky0u"]
-[ext_resource type="Script" path="res://game/level_selection/back.gd" id="1_y38v8"]
-[ext_resource type="Script" path="res://game/level_selection/level_1.gd" id="2_sxlp8"]
+[ext_resource type="Texture2D" uid="uid://dcg1b1jqru74p" path="res://assets/background/violet2.png" id="1_b8x1f"]
+[ext_resource type="FontFile" uid="uid://d3ftaug61a8t3" path="res://assets/fonts/Monocraft.otf" id="2_6yn0u"]
+[ext_resource type="Script" path="res://scenes/level_selection/level_1.gd" id="2_wig53"]
+[ext_resource type="Script" path="res://scenes/level_selection/back.gd" id="3_5jwxn"]
 
 [node name="level_selection" type="Node2D"]
 
 [node name="Violet2" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
-texture = ExtResource("1_7ky0u")
+texture = ExtResource("1_b8x1f")
 
 [node name="Level1" type="Button" parent="."]
 offset_left = 88.0
 offset_top = 259.0
 offset_right = 342.0
 offset_bottom = 369.0
+theme_override_fonts/font = ExtResource("2_6yn0u")
 theme_override_font_sizes/font_size = 40
 text = "Level 1"
-script = ExtResource("2_sxlp8")
+script = ExtResource("2_wig53")
 
 [node name="Level2" type="Button" parent="."]
 offset_left = 448.0
 offset_top = 259.0
 offset_right = 702.0
 offset_bottom = 369.0
+theme_override_fonts/font = ExtResource("2_6yn0u")
 theme_override_font_sizes/font_size = 40
 text = "Level 2"
 
@@ -32,6 +35,7 @@ offset_left = 810.0
 offset_top = 259.0
 offset_right = 1064.0
 offset_bottom = 369.0
+theme_override_fonts/font = ExtResource("2_6yn0u")
 theme_override_font_sizes/font_size = 40
 text = "Level 3"
 
@@ -40,9 +44,10 @@ offset_left = 29.0
 offset_top = 22.0
 offset_right = 108.0
 offset_bottom = 93.0
+theme_override_fonts/font = ExtResource("2_6yn0u")
 theme_override_font_sizes/font_size = 40
 text = "<-"
-script = ExtResource("1_y38v8")
+script = ExtResource("3_5jwxn")
 
 [connection signal="pressed" from="Level1" to="Level1" method="_on_pressed"]
 [connection signal="pressed" from="Back" to="Back" method="_on_pressed"]

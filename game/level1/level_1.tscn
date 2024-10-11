@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bfxq0u67jpa5e"]
 
 [ext_resource type="PackedScene" uid="uid://bgceni31vwcuu" path="res://bg/bg_winter.tscn" id="1_gy3pi"]
-[ext_resource type="Script" path="res://level1/back.gd" id="2_muwli"]
+[ext_resource type="Script" path="res://game/level1/back.gd" id="2_muwli"]
 
 [node name="level_1" type="Node2D"]
 

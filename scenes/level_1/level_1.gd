@@ -4,8 +4,12 @@ var score := [0, 0]# Player, CPU
 const PADDLE_SPEED : float = 500.0
 
 func _on_ball_timer_timeout():
+	$CPU.new_cpu()
+	$Player.new_player()
+	
 	$Ball.new_ball()
-	$Ball.visible = true
+	await get_tree().create_timer(1.0).timeout 
+	$Ball.start_moving()
 
 func _on_score_left_body_entered(body):
 	score[1] += 1

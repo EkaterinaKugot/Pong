@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var win_size : Vector2
 const START_SPEED : int = 500
-const ACCEL : int = 50 # ускорение
+const ACCEL : int = 10 # ускорение
 var speed : int
 var dir : Vector2
 const MAX_Y_VECTOR : float = 0.6
@@ -15,9 +15,14 @@ func _ready():
 func new_ball():
 	# выбирает случайную позицию и направление для старта
 	position.x = win_size.x / 2
-	position.y = randi_range(200, win_size.y - 200)
-	speed = START_SPEED
+	position.y = win_size.y / 2
 	dir = random_direction()
+	visible = true
+	process_mode = PROCESS_MODE_DISABLED
+	
+func start_moving():
+	process_mode = PROCESS_MODE_INHERIT
+	speed = START_SPEED
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):

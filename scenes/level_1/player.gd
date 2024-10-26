@@ -20,3 +20,4 @@ func _physics_process(delta: float) -> void:
 	
 func new_player():
 	position.y = 324
+	

@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var win_size : Vector2
 const START_SPEED : int = 500
-const ACCEL : int = 10 # ускорение
+const ACCEL : int = 5 # ускорение
 var speed : int
 var dir : Vector2
 const MAX_Y_VECTOR : float = 0.6
@@ -54,3 +54,4 @@ func new_direction(collider):
 		new_dir.x = 1
 	new_dir.y = (dist / (collider.p_height / 2)) * MAX_Y_VECTOR
 	return new_dir.normalized()
+	

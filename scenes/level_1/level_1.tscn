@@ -1,4 +1,4 @@
-[gd_scene load_steps=200 format=3 uid="uid://bq7xplhy6uxs5"]
+[gd_scene load_steps=201 format=3 uid="uid://bq7xplhy6uxs5"]
 
 [ext_resource type="PackedScene" uid="uid://bgceni31vwcuu" path="res://scenes/bg/bg_winter.tscn" id="1_cds7w"]
 [ext_resource type="Script" path="res://scenes/level_1/level_1.gd" id="1_qmjp0"]
@@ -191,6 +191,7 @@
 [ext_resource type="Texture2D" uid="uid://clqda4thum60y" path="res://assets/ball2/58.png" id="189_46xes"]
 [ext_resource type="Texture2D" uid="uid://dyrhlxf1x1jvp" path="res://assets/ball2/59.png" id="190_6ehew"]
 [ext_resource type="Texture2D" uid="uid://x15vpp36eatf" path="res://assets/ball2/60.png" id="191_dtqiv"]
+[ext_resource type="PackedScene" uid="uid://b08n85dunx8vk" path="res://scenes/timer/timer.tscn" id="192_s3dpj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gkb0t"]
 animations = [{
@@ -779,6 +780,8 @@ size = Vector2(82, 648)
 
 [node name="Level1" type="Sprite2D"]
 script = ExtResource("1_qmjp0")
+color_dialog_rect = Color(0.839216, 0.882353, 0.913725, 1)
+color_dialog_text = Color(0.156863, 0.14902, 0.376471, 1)
 
 [node name="bg_winter" parent="." instance=ExtResource("1_cds7w")]
 
@@ -877,11 +880,15 @@ shape = SubResource("RectangleShape2D_f0mvc")
 [node name="Hud" type="CanvasLayer" parent="."]
 
 [node name="PlayerScore" type="Label" parent="Hud"]
-offset_left = 466.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -170.0
 offset_top = 5.0
-offset_right = 506.0
+offset_right = -130.0
 offset_bottom = 56.0
-theme_override_colors/font_color = Color(1, 0.905882, 0.172549, 1)
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 0.380392, 1)
 theme_override_fonts/font = ExtResource("2_i4x8b")
 theme_override_font_sizes/font_size = 50
 text = "0"
@@ -889,11 +896,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CPUScore" type="Label" parent="Hud"]
-offset_left = 638.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 130.0
 offset_top = 5.0
-offset_right = 678.0
+offset_right = 170.0
 offset_bottom = 56.0
-theme_override_colors/font_color = Color(1, 0.905882, 0.172549, 1)
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.54902, 0.196078, 1)
 theme_override_fonts/font = ExtResource("2_i4x8b")
 theme_override_font_sizes/font_size = 50
 text = "0"
@@ -903,6 +914,10 @@ vertical_alignment = 1
 [node name="BallTimer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="Timer" parent="." instance=ExtResource("192_s3dpj")]
+timer = 5.0
+color_text = Color(1, 0.792157, 0.188235, 1)
 
 [connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
 [connection signal="body_entered" from="ScoreLeft" to="." method="_on_score_left_body_entered"]

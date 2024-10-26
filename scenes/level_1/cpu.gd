@@ -21,9 +21,8 @@ func _physics_process(delta: float) -> void:
 		else:
 			move_by = get_parent().PADDLE_SPEED * delta * (dist / abs(dist))
 	else:
-			move_by = dist
-		
-	
+		move_by = dist 
+			
 
 	position.y -= move_by
 	
@@ -31,3 +30,4 @@ func _physics_process(delta: float) -> void:
 	
 func new_cpu():
 	position.y = 324
+	

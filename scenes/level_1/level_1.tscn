@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bgceni31vwcuu" path="res://scenes/bg/bg_winter.tscn" id="1_cds7w"]
 [ext_resource type="Script" path="res://scenes/level_1/level_1.gd" id="1_qmjp0"]
 [ext_resource type="FontFile" uid="uid://d3ftaug61a8t3" path="res://assets/fonts/Monocraft.otf" id="2_i4x8b"]
-[ext_resource type="Script" path="res://scenes/level_1/back.gd" id="3_s3qxi"]
+[ext_resource type="PackedScene" uid="uid://ek76wfnau1kt" path="res://scenes/buttons/back_to_level_selection/back_to_level_selection.tscn" id="3_owrks"]
 [ext_resource type="Script" path="res://scenes/level_1/ball.gd" id="6_t1yoa"]
 [ext_resource type="Texture2D" uid="uid://fk1hfmvf7gqn" path="res://assets/fire1/1_0.png" id="8_m16mp"]
 [ext_resource type="Script" path="res://scenes/level_1/player.gd" id="8_pbpij"]
@@ -785,15 +785,7 @@ color_dialog_text = Color(0.156863, 0.14902, 0.376471, 1)
 
 [node name="bg_winter" parent="." instance=ExtResource("1_cds7w")]
 
-[node name="Back" type="Button" parent="."]
-offset_left = 29.0
-offset_top = 22.0
-offset_right = 108.0
-offset_bottom = 93.0
-theme_override_fonts/font = ExtResource("2_i4x8b")
-theme_override_font_sizes/font_size = 40
-text = "<-"
-script = ExtResource("3_s3qxi")
+[node name="BackToLevelSelection" parent="." instance=ExtResource("3_owrks")]
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(73, 324)
@@ -916,10 +908,8 @@ one_shot = true
 autostart = true
 
 [node name="Timer" parent="." instance=ExtResource("192_s3dpj")]
-timer = 5.0
 color_text = Color(1, 0.792157, 0.188235, 1)
 
-[connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
 [connection signal="body_entered" from="ScoreLeft" to="." method="_on_score_left_body_entered"]
 [connection signal="body_entered" from="ScoreRight" to="." method="_on_score_right_body_entered"]
 [connection signal="timeout" from="BallTimer" to="." method="_on_ball_timer_timeout"]

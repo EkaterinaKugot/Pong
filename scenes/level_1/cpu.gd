@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
-var ball_pos : Vector2
-var dist : int # расстояние по вертикале от ракетки
-var move_by : int # как далеко перемещяется ракетка
-var win_height : int # выоста окна
-var p_height : int # высота ракетки
+var ball_pos: Vector2
+var dist_y: int # расстояние по вертикале от ракетки
+var dist_x: int
+var move_by: int # как далеко перемещяется ракетка
+var win_height: int # выоста окна
+var p_height: int # высота ракетки
 
 
 func _ready():
@@ -13,16 +14,13 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	ball_pos = $"../Ball".position
-	dist = position.y - ball_pos.y
+	dist_y = position.y - ball_pos.y
+	dist_x = position.x - ball_pos.x
 	
-	if abs(dist) > get_parent().PADDLE_SPEED * delta:
-		if delta < 0.02:
-			move_by = get_parent().PADDLE_SPEED * 3 * delta * (dist / abs(dist))
-		else:
-			move_by = get_parent().PADDLE_SPEED * delta * (dist / abs(dist))
+	if dist_x <= 40 and dist_y < 50:
+		move_by = 0
 	else:
-		move_by = dist 
-			
+		move_by = dist_y * 0.2
 
 	position.y -= move_by
 	
@@ -30,4 +28,5 @@ func _physics_process(delta: float) -> void:
 	
 func new_cpu():
 	position.y = 324
+	get_parent().can_accel_cpu = true
 	

@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scenes/menu/menu.gd" id="1_o5mro"]
 [ext_resource type="Texture2D" uid="uid://bks8ec0p65fnh" path="res://assets/background/violet.png" id="2_siaa3"]
-[ext_resource type="FontFile" uid="uid://d3ftaug61a8t3" path="res://assets/fonts/Monocraft.otf" id="3_p0eb5"]
 [ext_resource type="Script" path="res://scenes/menu/play.gd" id="3_uoe3q"]
 [ext_resource type="Script" path="res://scenes/menu/quit.gd" id="4_tlo61"]
+[ext_resource type="PackedScene" uid="uid://p2ln13x68loq" path="res://scenes/buttons/menu_button/menu_button.tscn" id="8_lw117"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_o5mro")
@@ -13,25 +13,18 @@ script = ExtResource("1_o5mro")
 position = Vector2(576, 324)
 texture = ExtResource("2_siaa3")
 
-[node name="Play" type="Button" parent="."]
-offset_left = 394.0
-offset_top = 129.0
-offset_right = 737.0
-offset_bottom = 240.0
-theme_override_fonts/font = ExtResource("3_p0eb5")
-theme_override_font_sizes/font_size = 50
+[node name="Play" parent="." instance=ExtResource("8_lw117")]
+offset_left = 411.0
+offset_top = 175.667
+offset_right = 741.0
+offset_bottom = 265.667
 text = "Play"
 script = ExtResource("3_uoe3q")
 
-[node name="Quit" type="Button" parent="."]
-offset_left = 394.0
-offset_top = 325.0
-offset_right = 737.0
-offset_bottom = 436.0
-theme_override_fonts/font = ExtResource("3_p0eb5")
-theme_override_font_sizes/font_size = 50
+[node name="Quit" parent="." instance=ExtResource("8_lw117")]
+offset_left = 411.0
+offset_top = 382.333
+offset_right = 741.0
+offset_bottom = 472.333
 text = "Quit"
 script = ExtResource("4_tlo61")
-
-[connection signal="pressed" from="Play" to="Play" method="_on_pressed"]
-[connection signal="pressed" from="Quit" to="Quit" method="_on_pressed"]

@@ -1,11 +1,12 @@
 extends CharacterBody2D
 
-var win_size : Vector2
-const START_SPEED : int = 500
-const ACCEL : int = 5 # ускорение
-var speed : int
-var dir : Vector2
-const MAX_Y_VECTOR : float = 0.6
+const START_SPEED: int = 500
+const MAX_Y_VECTOR: float = 0.6
+const ACCEL: int = 5 # ускорение
+var win_size: Vector2
+var speed: int
+var dir: Vector2
+var racket_pos: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,10 +32,19 @@ func _physics_process(delta):
 	if collision:
 		collider = collision.get_collider()
 		if collider == $"../Player" or collider == $"../CPU":
-			speed += ACCEL
+			if collider == $"../Player" and get_parent().can_accel_player:
+				get_parent().can_accel_cpu = true
+				speed += ACCEL
+				get_parent().can_accel_player = false
+			elif collider == $"../CPU" and get_parent().can_accel_cpu:
+				get_parent().can_accel_player = true
+				speed += ACCEL
+				get_parent().can_accel_cpu = false
 			dir = new_direction(collider)
 		else:
 			dir = dir.bounce(collision.get_normal())
+			get_parent().can_accel_player = true
+			get_parent().can_accel_cpu = true
 
 func random_direction():
 	var new_dir := Vector2()

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ek76wfnau1kt"]
+
+[ext_resource type="Script" path="res://scenes/buttons/back_to_level_selection/back_to_level_selection.gd" id="1_t01tp"]
+[ext_resource type="FontFile" uid="uid://d3ftaug61a8t3" path="res://assets/fonts/Monocraft.otf" id="1_y0brj"]
+
+[node name="BackToLevelSelection" type="Button"]
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 105.0
+offset_bottom = 95.0
+theme_override_fonts/font = ExtResource("1_y0brj")
+theme_override_font_sizes/font_size = 40
+text = "<-"
+script = ExtResource("1_t01tp")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 var win_height : int # высота окна
 var p_height : int # высота ракетки
 
@@ -20,4 +19,6 @@ func _physics_process(delta: float) -> void:
 	
 func new_player():
 	position.y = 324
+	process_mode = PROCESS_MODE_INHERIT
+	get_parent().can_accel_player = true
 	

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dknc73h6hjkmq"]
+
+[ext_resource type="Theme" uid="uid://b3nypturfrnlw" path="res://scenes/game_elements/buttons/dialog_button.tres" id="1_upvpp"]
+[ext_resource type="Script" path="res://scenes/game_elements/buttons/back_to_level_selection/back_to_level_selection.gd" id="2_cit3w"]
+
+[node name="BackText" type="Button"]
+offset_right = 200.0
+offset_bottom = 55.0
+theme = ExtResource("1_upvpp")
+text = "Back"
+script = ExtResource("2_cit3w")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

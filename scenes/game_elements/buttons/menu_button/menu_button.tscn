@@ -37,6 +37,7 @@ Button/styles/pressed = SubResource("StyleBoxTexture_gfa4s")
 [node name="Button" type="Button"]
 offset_right = 330.0
 offset_bottom = 90.0
+mouse_default_cursor_shape = 2
 theme = SubResource("Theme_f31hj")
 keep_pressed_outside = true
 

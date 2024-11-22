@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://msa6h1lxo2qu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qege6"]
+size = Vector2(1152, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3h3n7"]
+size = Vector2(1152, 64)
+
+[node name="TopBot" type="StaticBody2D"]
+collision_layer = 2
+
+[node name="Top" type="CollisionShape2D" parent="."]
+position = Vector2(576, -32)
+shape = SubResource("RectangleShape2D_qege6")
+
+[node name="Bottom" type="CollisionShape2D" parent="."]
+position = Vector2(576, 680)
+shape = SubResource("RectangleShape2D_3h3n7")

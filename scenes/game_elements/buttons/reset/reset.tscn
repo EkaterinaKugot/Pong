@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://l7xl1ysj3xqo"]
+
+[ext_resource type="Theme" uid="uid://b3nypturfrnlw" path="res://scenes/game_elements/buttons/dialog_button.tres" id="1_ivslw"]
+[ext_resource type="Script" path="res://scenes/game_elements/buttons/reset/reset.gd" id="2_gglci"]
+
+[node name="Reset" type="Button"]
+offset_right = 200.0
+offset_bottom = 55.0
+theme = ExtResource("1_ivslw")
+text = "Reset"
+script = ExtResource("2_gglci")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

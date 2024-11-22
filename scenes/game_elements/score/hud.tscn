@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsrt8t0rnifpt"]
+
+[ext_resource type="Script" path="res://scenes/game_elements/score/hud.gd" id="1_82b4r"]
+[ext_resource type="FontFile" uid="uid://d3ftaug61a8t3" path="res://assets/fonts/Monocraft.otf" id="1_x00jt"]
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_82b4r")
+
+[node name="PlayerScore" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -170.0
+offset_top = 5.0
+offset_right = -130.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_x00jt")
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CPUScore" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 130.0
+offset_top = 5.0
+offset_right = 170.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_x00jt")
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

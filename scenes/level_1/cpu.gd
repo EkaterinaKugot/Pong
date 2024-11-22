@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export var reaction_speed: float = 0.3
 var ball_pos: Vector2
 var dist_y: int # расстояние по вертикале от ракетки
 var dist_x: int
@@ -20,7 +21,7 @@ func _physics_process(delta: float) -> void:
 	if dist_x <= 40 and dist_y < 50:
 		move_by = 0
 	else:
-		move_by = dist_y * 0.2
+		move_by = dist_y * reaction_speed
 
 	position.y -= move_by
 	

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwoeqlgmoq44f"]
+
+[ext_resource type="Theme" uid="uid://b3nypturfrnlw" path="res://scenes/game_elements/buttons/dialog_button.tres" id="1_6s2tk"]
+[ext_resource type="Script" path="res://scenes/game_elements/buttons/next/next.gd" id="2_po7b0"]
+
+[node name="Next" type="Button"]
+offset_right = 200.0
+offset_bottom = 55.0
+theme = ExtResource("1_6s2tk")
+text = "Next"
+script = ExtResource("2_po7b0")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

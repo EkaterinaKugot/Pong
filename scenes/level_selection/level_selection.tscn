@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://dsob7m6gyugc2"]
 
 [ext_resource type="Texture2D" uid="uid://dcg1b1jqru74p" path="res://assets/background/violet2.png" id="1_b8x1f"]
-[ext_resource type="FontFile" uid="uid://d3ftaug61a8t3" path="res://assets/fonts/Monocraft.otf" id="2_6yn0u"]
+[ext_resource type="PackedScene" uid="uid://ek76wfnau1kt" path="res://scenes/game_elements/buttons/back_to_level_selection/back_to_level_selection.tscn" id="2_2uhhr"]
 [ext_resource type="Script" path="res://scenes/level_selection/level_1.gd" id="2_wig53"]
-[ext_resource type="Script" path="res://scenes/level_selection/back.gd" id="3_5jwxn"]
-[ext_resource type="PackedScene" uid="uid://p2ln13x68loq" path="res://scenes/buttons/menu_button/menu_button.tscn" id="4_nrlyv"]
+[ext_resource type="Script" path="res://scenes/game_elements/buttons/back_to_level_selection/back_to_menu.gd" id="3_wvjwr"]
+[ext_resource type="PackedScene" uid="uid://p2ln13x68loq" path="res://scenes/game_elements/buttons/menu_button/menu_button.tscn" id="4_nrlyv"]
 
 [node name="LevelSelection" type="Node2D"]
 
@@ -12,15 +12,8 @@
 position = Vector2(576, 324)
 texture = ExtResource("1_b8x1f")
 
-[node name="Back" type="Button" parent="."]
-offset_left = 29.0
-offset_top = 22.0
-offset_right = 108.0
-offset_bottom = 93.0
-theme_override_fonts/font = ExtResource("2_6yn0u")
-theme_override_font_sizes/font_size = 40
-text = "<-"
-script = ExtResource("3_5jwxn")
+[node name="Back" parent="." instance=ExtResource("2_2uhhr")]
+script = ExtResource("3_wvjwr")
 
 [node name="Level1" parent="." instance=ExtResource("4_nrlyv")]
 offset_left = 51.0

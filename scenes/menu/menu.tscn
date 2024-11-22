@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bks8ec0p65fnh" path="res://assets/background/violet.png" id="2_siaa3"]
 [ext_resource type="Script" path="res://scenes/menu/play.gd" id="3_uoe3q"]
 [ext_resource type="Script" path="res://scenes/menu/quit.gd" id="4_tlo61"]
-[ext_resource type="PackedScene" uid="uid://p2ln13x68loq" path="res://scenes/buttons/menu_button/menu_button.tscn" id="8_lw117"]
+[ext_resource type="PackedScene" uid="uid://p2ln13x68loq" path="res://scenes/game_elements/buttons/menu_button/menu_button.tscn" id="8_lw117"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_o5mro")

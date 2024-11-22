@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://c5jeqs1x7blkj"]
 
 [ext_resource type="FontFile" uid="uid://d3ftaug61a8t3" path="res://assets/fonts/Monocraft.otf" id="1_frmhu"]
-[ext_resource type="Script" path="res://scenes/dialog_lose/lose.gd" id="1_r0jf8"]
-[ext_resource type="PackedScene" uid="uid://dknc73h6hjkmq" path="res://scenes/buttons/back_to_level_selection/back_to_level_selection_text.tscn" id="2_he7ub"]
-[ext_resource type="PackedScene" uid="uid://l7xl1ysj3xqo" path="res://scenes/buttons/reset/reset.tscn" id="3_h1165"]
+[ext_resource type="Script" path="res://scenes/game_elements/dialog_lose/lose.gd" id="1_r0jf8"]
+[ext_resource type="PackedScene" uid="uid://dknc73h6hjkmq" path="res://scenes/game_elements/buttons/back_to_level_selection/back_to_level_selection_text.tscn" id="2_he7ub"]
+[ext_resource type="PackedScene" uid="uid://l7xl1ysj3xqo" path="res://scenes/game_elements/buttons/reset/reset.tscn" id="3_h1165"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -12,20 +12,28 @@ offset_right = 550.0
 offset_bottom = 300.0
 script = ExtResource("1_r0jf8")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
+[node name="Border" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 550.0
 offset_bottom = 300.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 540.0
+offset_bottom = 290.0
 
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -133.5
-offset_top = 75.0
-offset_right = 133.5
-offset_bottom = 126.0
+offset_left = -150.0
+offset_top = 70.0
+offset_right = 150.0
+offset_bottom = 121.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 4.70027e-11, 0.00123252, 1)
 theme_override_fonts/font = ExtResource("1_frmhu")
@@ -37,13 +45,13 @@ vertical_alignment = 1
 [node name="BackText" parent="ColorRect" instance=ExtResource("2_he7ub")]
 layout_mode = 0
 offset_left = 50.0
-offset_top = 200.0
+offset_top = 185.0
 offset_right = 250.0
-offset_bottom = 270.0
+offset_bottom = 240.0
 
 [node name="Reset" parent="ColorRect" instance=ExtResource("3_h1165")]
 layout_mode = 0
-offset_left = 300.0
-offset_top = 200.0
-offset_right = 500.0
-offset_bottom = 270.0
+offset_left = 280.0
+offset_top = 185.0
+offset_right = 480.0
+offset_bottom = 240.0

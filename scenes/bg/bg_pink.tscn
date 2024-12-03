@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bo24uybvt7tjq"]
+
+[ext_resource type="Script" path="res://scenes/bg/bg_winter.gd" id="1_rwxyy"]
+[ext_resource type="Texture2D" uid="uid://bnou3fg18fdwl" path="res://assets/background/pink/bg.png" id="2_84gpo"]
+[ext_resource type="Texture2D" uid="uid://c6msg2m7xrmnj" path="res://assets/background/pink/mid.png" id="3_mlavk"]
+[ext_resource type="Texture2D" uid="uid://cavp7qv52of0e" path="res://assets/background/pink/front.png" id="4_15w8n"]
+
+[node name="BgPink" type="ParallaxBackground"]
+script = ExtResource("1_rwxyy")
+
+[node name="bg" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.1, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="bg"]
+position = Vector2(576, 324)
+texture = ExtResource("2_84gpo")
+
+[node name="mid" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.3, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="mid"]
+position = Vector2(576, 324)
+texture = ExtResource("3_mlavk")
+
+[node name="front" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="front"]
+position = Vector2(576, 324)
+texture = ExtResource("4_15w8n")

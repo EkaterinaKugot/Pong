@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgceni31vwcuu"]
 
-[ext_resource type="Texture2D" uid="uid://dvf040wmfulpo" path="res://assets/background/winter_bg.png" id="1_63sol"]
+[ext_resource type="Texture2D" uid="uid://dvf040wmfulpo" path="res://assets/background/winter/winter_bg.png" id="1_63sol"]
 [ext_resource type="Script" path="res://scenes/bg/bg_winter.gd" id="1_te0i0"]
-[ext_resource type="Texture2D" uid="uid://bcspabi3ve51f" path="res://assets/background/winter_back.png" id="3_jon33"]
-[ext_resource type="Texture2D" uid="uid://1ihvdoxrb7ea" path="res://assets/background/winter_front.png" id="4_a5fs4"]
+[ext_resource type="Texture2D" uid="uid://bcspabi3ve51f" path="res://assets/background/winter/winter_mid.png" id="3_mgsyl"]
+[ext_resource type="Texture2D" uid="uid://1ihvdoxrb7ea" path="res://assets/background/winter/winter_front.png" id="4_a5fs4"]
 
 [node name="BgWinter" type="ParallaxBackground"]
 script = ExtResource("1_te0i0")
@@ -16,13 +16,13 @@ motion_mirroring = Vector2(1152, 0)
 position = Vector2(576, 324)
 texture = ExtResource("1_63sol")
 
-[node name="back" type="ParallaxLayer" parent="."]
+[node name="mid" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.3, 1)
 motion_mirroring = Vector2(1152, 0)
 
-[node name="WinterBack" type="Sprite2D" parent="back"]
+[node name="WinterBack" type="Sprite2D" parent="mid"]
 position = Vector2(576, 324)
-texture = ExtResource("3_jon33")
+texture = ExtResource("3_mgsyl")
 
 [node name="front" type="ParallaxLayer" parent="."]
 motion_mirroring = Vector2(1152, 0)

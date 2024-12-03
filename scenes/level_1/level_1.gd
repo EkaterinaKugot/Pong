@@ -2,7 +2,7 @@ extends Sprite2D
 
 var score := [0, 0]# Player, CPU
 const PADDLE_SPEED : float = 500.0
-const CPU_WIN: int = 3
+const CPU_WIN: int = 2
 const PLAYER_WIN: int = 1
 
 var window_size
@@ -17,11 +17,14 @@ var window_size
 @onready var player = $Player
 @onready var cpu = $CPU
 @onready var timer = $Timer
+@onready var hud = $Hud
 @onready var dialog_win = preload("res://scenes/game_elements/dialog_win/win.tscn")
 @onready var dialog_lose = preload("res://scenes/game_elements/dialog_lose/lose.tscn")
 var dialog: Node = null
-var can_accel_player: bool = true
-var can_accel_cpu: bool = true
+var can_accel_player1: bool = true
+var can_accel_cpu1: bool = true
+
+var can_accel_player2 = null
 
 func _ready():
 	window_size = get_viewport().size
@@ -44,12 +47,12 @@ func _on_ball_timer_timeout():
 	
 func _on_left_body_entered(_body) -> void:
 	score[1] += 1
-	$Hud.get_child(1).text = str(score[1])
+	hud.get_child(1).text = str(score[1])
 	ball_timer.start()
 
 func _on_right_body_entered(_body) -> void:
 	score[0] += 1
-	$Hud.get_child(0).text = str(score[0])
+	hud.get_child(0).text = str(score[0])
 	ball_timer.start()
 	
 func stop_all(is_win: bool):
@@ -67,7 +70,6 @@ func show_dialog(dialog_window):
 		dialog = dialog_window.instantiate()
 		add_child(dialog) 
 		dialog.level = 1
-		print(dialog.level)
 		
 		dialog.position.x = (window_size.x - dialog.size.x) / 2
 		dialog.position.y = (window_size.y - dialog.size.y) / 2

@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dsob7m6gyugc2"]
+[gd_scene load_steps=8 format=3 uid="uid://dsob7m6gyugc2"]
 
 [ext_resource type="Texture2D" uid="uid://dcg1b1jqru74p" path="res://assets/background/violet2.png" id="1_b8x1f"]
 [ext_resource type="PackedScene" uid="uid://ek76wfnau1kt" path="res://scenes/game_elements/buttons/back_to_level_selection/back_to_level_selection.tscn" id="2_2uhhr"]
 [ext_resource type="Script" path="res://scenes/level_selection/level_1.gd" id="2_wig53"]
 [ext_resource type="Script" path="res://scenes/game_elements/buttons/back_to_level_selection/back_to_menu.gd" id="3_wvjwr"]
 [ext_resource type="PackedScene" uid="uid://p2ln13x68loq" path="res://scenes/game_elements/buttons/menu_button/menu_button.tscn" id="4_nrlyv"]
+[ext_resource type="Script" path="res://scenes/level_selection/level_2.gd" id="6_3110q"]
+[ext_resource type="Script" path="res://scenes/level_selection/level_3.gd" id="7_851jn"]
 
 [node name="LevelSelection" type="Node2D"]
 
@@ -29,6 +31,7 @@ offset_top = 279.0
 offset_right = 741.0
 offset_bottom = 369.0
 text = "Level 2"
+script = ExtResource("6_3110q")
 
 [node name="Level3" parent="." instance=ExtResource("4_nrlyv")]
 offset_left = 771.0
@@ -36,5 +39,6 @@ offset_top = 279.0
 offset_right = 1101.0
 offset_bottom = 369.0
 text = "Level 3"
+script = ExtResource("7_851jn")
 
 [connection signal="pressed" from="Back" to="Back" method="_on_pressed"]

@@ -6,6 +6,7 @@
 [node name="BackText" type="Button"]
 offset_right = 200.0
 offset_bottom = 55.0
+mouse_default_cursor_shape = 2
 theme = ExtResource("1_upvpp")
 text = "Back"
 script = ExtResource("2_cit3w")

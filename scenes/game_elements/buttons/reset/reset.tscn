@@ -6,6 +6,7 @@
 [node name="Reset" type="Button"]
 offset_right = 200.0
 offset_bottom = 55.0
+mouse_default_cursor_shape = 2
 theme = ExtResource("1_ivslw")
 text = "Reset"
 script = ExtResource("2_gglci")

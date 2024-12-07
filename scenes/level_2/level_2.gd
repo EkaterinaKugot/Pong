@@ -23,7 +23,6 @@ var window_size
 var dialog: Node = null
 var can_accel_player1: bool = true
 var can_accel_cpu1: bool = true
-
 var can_accel_player2 = null
 
 func _ready():
@@ -31,7 +30,6 @@ func _ready():
 	player.process_mode = PROCESS_MODE_DISABLED
 	
 func _on_ball_timer_timeout():
-	print(1)
 	player.process_mode = PROCESS_MODE_DISABLED
 	ball.new_ball()
 	if score[1] == CPU_WIN:
@@ -86,6 +84,7 @@ func show_dialog(dialog_window):
 		
 	
 func win():
+	Global.is_condition_met_for_level3 = true
 	show_dialog(dialog_win)
 
 func lose():

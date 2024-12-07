@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 const START_SPEED: int = 500
-const MAX_Y_VECTOR: float = 0.6
 const ACCEL: int = 3 # ускорение
 var win_size: Vector2
 var speed: int
@@ -44,7 +43,7 @@ func _physics_process(delta):
 				get_parent().can_accel_player2 = true
 				speed += ACCEL
 				get_parent().can_accel_cpu2 = false
-			dir = new_direction(collider)
+			dir = Global.new_direction(collider, dir, position)
 		else:
 			dir = dir.bounce(collision.get_normal())
 			get_parent().can_accel_player2 = true
@@ -54,17 +53,4 @@ func left_direction():
 	var new_dir := Vector2()
 	new_dir.x = -1
 	new_dir.y = randf_range(-0.8, 0.8)
-	return new_dir.normalized()
-
-func new_direction(collider):
-	var ball_y = position.y
-	var pad_y = collider.position.y
-	var dist = ball_y - pad_y
-	var new_dir := Vector2()
-	
-	if dir.x > 0:
-		new_dir.x = -1
-	else:
-		new_dir.x = 1
-	new_dir.y = (dist / (collider.p_height / 2)) * MAX_Y_VECTOR
 	return new_dir.normalized()

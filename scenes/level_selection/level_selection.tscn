@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dsob7m6gyugc2"]
+[gd_scene load_steps=9 format=3 uid="uid://dsob7m6gyugc2"]
 
 [ext_resource type="Texture2D" uid="uid://dcg1b1jqru74p" path="res://assets/background/violet2.png" id="1_b8x1f"]
+[ext_resource type="Script" path="res://scenes/level_selection/level_selection.gd" id="1_hgjvw"]
 [ext_resource type="PackedScene" uid="uid://ek76wfnau1kt" path="res://scenes/game_elements/buttons/back_to_level_selection/back_to_level_selection.tscn" id="2_2uhhr"]
 [ext_resource type="Script" path="res://scenes/level_selection/level_1.gd" id="2_wig53"]
 [ext_resource type="Script" path="res://scenes/game_elements/buttons/back_to_level_selection/back_to_menu.gd" id="3_wvjwr"]
@@ -9,6 +10,7 @@
 [ext_resource type="Script" path="res://scenes/level_selection/level_3.gd" id="7_851jn"]
 
 [node name="LevelSelection" type="Node2D"]
+script = ExtResource("1_hgjvw")
 
 [node name="Violet2" type="Sprite2D" parent="."]
 position = Vector2(576, 324)

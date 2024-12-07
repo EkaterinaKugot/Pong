@@ -23,7 +23,6 @@ var window_size
 var dialog: Node = null
 var can_accel_player1: bool = true
 var can_accel_cpu1: bool = true
-
 var can_accel_player2 = null
 
 func _ready():
@@ -85,6 +84,7 @@ func show_dialog(dialog_window):
 		
 	
 func win():
+	Global.is_condition_met_for_level2 = true
 	show_dialog(dialog_win)
 
 func lose():

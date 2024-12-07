@@ -1,51 +1,57 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5ujg1djpnxy8"]
+[gd_scene load_steps=16 format=3 uid="uid://breotp5gokk2a"]
 
-[ext_resource type="PackedScene" uid="uid://bo24uybvt7tjq" path="res://scenes/bg/bg_pink.tscn" id="1_dgr38"]
-[ext_resource type="Script" path="res://scenes/level_3/level_3.gd" id="1_m8fuf"]
-[ext_resource type="PackedScene" uid="uid://ek76wfnau1kt" path="res://scenes/game_elements/buttons/back_to_level_selection/back_to_level_selection.tscn" id="2_bqcoa"]
-[ext_resource type="PackedScene" uid="uid://yjcwhww4dpgj" path="res://scenes/game_elements/player/player.tscn" id="3_14k0x"]
-[ext_resource type="PackedScene" uid="uid://cjj4e47k0kfve" path="res://scenes/game_elements/cpu/cpu.tscn" id="4_dktyt"]
-[ext_resource type="Script" path="res://scenes/game_elements/buttons/back_to_level_selection/back_to_level_selection.gd" id="4_jslq6"]
-[ext_resource type="PackedScene" uid="uid://djxmkj3xasvha" path="res://scenes/game_elements/ball/ball.tscn" id="5_cuytk"]
-[ext_resource type="Script" path="res://scenes/game_elements/ball/ball1.gd" id="6_wf7yi"]
-[ext_resource type="PackedScene" uid="uid://msa6h1lxo2qu" path="res://scenes/game_elements/borders/top_bot.tscn" id="7_p1vk5"]
-[ext_resource type="PackedScene" uid="uid://cmnkqn4qsrj7j" path="res://scenes/game_elements/borders/right.tscn" id="8_ko3a1"]
-[ext_resource type="PackedScene" uid="uid://c6kaumwe25quq" path="res://scenes/game_elements/borders/left.tscn" id="9_kpwym"]
-[ext_resource type="PackedScene" uid="uid://bsrt8t0rnifpt" path="res://scenes/game_elements/score/hud.tscn" id="10_265nn"]
-[ext_resource type="PackedScene" uid="uid://b08n85dunx8vk" path="res://scenes/game_elements/timer/timer.tscn" id="11_m1b0s"]
+[ext_resource type="Script" path="res://scenes/level_3/level_3.gd" id="1_b2esj"]
+[ext_resource type="PackedScene" uid="uid://bbu7j5qv8dws3" path="res://scenes/bg/bg_green.tscn" id="1_opbqx"]
+[ext_resource type="PackedScene" uid="uid://ek76wfnau1kt" path="res://scenes/game_elements/buttons/back_to_level_selection/back_to_level_selection.tscn" id="2_1xk82"]
+[ext_resource type="Script" path="res://scenes/game_elements/buttons/back_to_level_selection/back_to_level_selection.gd" id="3_711i2"]
+[ext_resource type="PackedScene" uid="uid://yjcwhww4dpgj" path="res://scenes/game_elements/player/player.tscn" id="3_ggqo1"]
+[ext_resource type="PackedScene" uid="uid://cjj4e47k0kfve" path="res://scenes/game_elements/cpu/cpu.tscn" id="4_qetgg"]
+[ext_resource type="PackedScene" uid="uid://djxmkj3xasvha" path="res://scenes/game_elements/ball/ball.tscn" id="5_q8v6q"]
+[ext_resource type="PackedScene" uid="uid://msa6h1lxo2qu" path="res://scenes/game_elements/borders/top_bot.tscn" id="6_ocgbw"]
+[ext_resource type="Script" path="res://scenes/game_elements/cpu/cpu_l2.gd" id="7_g12si"]
+[ext_resource type="PackedScene" uid="uid://cmnkqn4qsrj7j" path="res://scenes/game_elements/borders/right.tscn" id="7_rnekb"]
+[ext_resource type="Script" path="res://scenes/game_elements/ball/ball2_l3.gd" id="7_sy8ul"]
+[ext_resource type="PackedScene" uid="uid://c6kaumwe25quq" path="res://scenes/game_elements/borders/left.tscn" id="8_7menr"]
+[ext_resource type="Script" path="res://scenes/game_elements/ball/ball1_l3.gd" id="9_0xr4b"]
+[ext_resource type="PackedScene" uid="uid://bsrt8t0rnifpt" path="res://scenes/game_elements/score/hud.tscn" id="9_xn6to"]
+[ext_resource type="PackedScene" uid="uid://b08n85dunx8vk" path="res://scenes/game_elements/timer/timer.tscn" id="10_q0jh1"]
 
 [node name="Level3" type="Sprite2D"]
-script = ExtResource("1_m8fuf")
-color_dialog_border = Color(1, 0.839216, 0.996078, 1)
-color_dialog_rect = Color(0.32549, 0.301961, 0.403922, 1)
-color_dialog_text = Color(1, 0.839216, 0.996078, 1)
+script = ExtResource("1_b2esj")
+color_dialog_border = Color(0.929412, 1, 0.8, 1)
+color_dialog_rect = Color(0.113725, 0.223529, 0.156863, 1)
+color_dialog_text = Color(0.929412, 1, 0.8, 1)
 
-[node name="BgPink" parent="." instance=ExtResource("1_dgr38")]
+[node name="BgGreen" parent="." instance=ExtResource("1_opbqx")]
 
-[node name="Back" parent="." instance=ExtResource("2_bqcoa")]
-script = ExtResource("4_jslq6")
+[node name="Back" parent="." instance=ExtResource("2_1xk82")]
+script = ExtResource("3_711i2")
 
-[node name="Player" parent="." instance=ExtResource("3_14k0x")]
+[node name="Player" parent="." instance=ExtResource("3_ggqo1")]
 
-[node name="CPU" parent="." instance=ExtResource("4_dktyt")]
-reaction_speed = 0.4
+[node name="CPU" parent="." instance=ExtResource("4_qetgg")]
+script = ExtResource("7_g12si")
 
-[node name="Ball" parent="." instance=ExtResource("5_cuytk")]
-script = ExtResource("6_wf7yi")
-ACCEL = 7
+[node name="Ball1" parent="." instance=ExtResource("5_q8v6q")]
+position = Vector2(606, 324)
+script = ExtResource("9_0xr4b")
 
-[node name="TopBot" parent="." instance=ExtResource("7_p1vk5")]
+[node name="Ball2" parent="." instance=ExtResource("5_q8v6q")]
+position = Vector2(546, 324)
+script = ExtResource("7_sy8ul")
 
-[node name="Right" parent="." instance=ExtResource("8_ko3a1")]
+[node name="TopBot" parent="." instance=ExtResource("6_ocgbw")]
 
-[node name="Left" parent="." instance=ExtResource("9_kpwym")]
+[node name="Right" parent="." instance=ExtResource("7_rnekb")]
 
-[node name="Hud" parent="." instance=ExtResource("10_265nn")]
+[node name="Left" parent="." instance=ExtResource("8_7menr")]
+
+[node name="Hud" parent="." instance=ExtResource("9_xn6to")]
 color_player = Color(1, 1, 0.380392, 1)
 color_cpu = Color(1, 0.54902, 0.196078, 1)
 
-[node name="Timer" parent="." instance=ExtResource("11_m1b0s")]
-timer = 30.0
+[node name="Timer" parent="." instance=ExtResource("10_q0jh1")]
+timer = 181.0
 color_text = Color(1, 0.792157, 0.188235, 1)
 
 [node name="BallTimer" type="Timer" parent="."]

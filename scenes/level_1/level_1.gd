@@ -2,7 +2,7 @@ extends Sprite2D
 
 var score := [0, 0]# Player, CPU
 const PADDLE_SPEED : float = 500.0
-const CPU_WIN: int = 2
+const CPU_WIN: int = 3
 const PLAYER_WIN: int = 1
 
 var window_size

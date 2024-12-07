@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const START_SPEED: int = 500
 const MAX_Y_VECTOR: float = 0.6
-const ACCEL: int = 2.5 # ускорение
+const ACCEL: int = 3 # ускорение
 var win_size: Vector2
 var speed: int
 var dir: Vector2
@@ -19,11 +19,10 @@ func _ready():
 func new_ball():
 	# выбирает случайную позицию и направление для старта
 	process_mode = PROCESS_MODE_DISABLED
-	position.x = win_size.x / 2 - 30
+	position.x = win_size.x / 2 + 30
 	position.y = win_size.y / 2
-	dir = left_direction()
+	dir = right_direction()
 	visible = true
-
 	
 func start_moving():
 	process_mode = PROCESS_MODE_INHERIT
@@ -36,23 +35,23 @@ func _physics_process(delta):
 	if collision:
 		collider = collision.get_collider()
 		if collider == player or collider == cpu:
-			if collider == player and get_parent().can_accel_player2:
-				get_parent().can_accel_cpu2 = true
+			if collider == player and get_parent().can_accel_player1:
+				get_parent().can_accel_cpu1 = true
 				speed += ACCEL
-				get_parent().can_accel_player2 = false
-			elif collider == cpu and get_parent().can_accel_cpu2:
-				get_parent().can_accel_player2 = true
+				get_parent().can_accel_player1 = false
+			elif collider == cpu and get_parent().can_accel_cpu1:
+				get_parent().can_accel_player1 = true
 				speed += ACCEL
-				get_parent().can_accel_cpu2 = false
+				get_parent().can_accel_cpu1 = false
 			dir = new_direction(collider)
 		else:
 			dir = dir.bounce(collision.get_normal())
-			get_parent().can_accel_player2 = true
-			get_parent().can_accel_cpu2 = true
+			get_parent().can_accel_player1 = true
+			get_parent().can_accel_cpu1 = true
 
-func left_direction():
+func right_direction():
 	var new_dir := Vector2()
-	new_dir.x = -1
+	new_dir.x = 1
 	new_dir.y = randf_range(-0.8, 0.8)
 	return new_dir.normalized()
 

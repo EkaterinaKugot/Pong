@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://breotp5gokk2a"]
+[gd_scene load_steps=17 format=3 uid="uid://breotp5gokk2a"]
 
 [ext_resource type="Script" path="res://scenes/level_3/level_3.gd" id="1_b2esj"]
 [ext_resource type="PackedScene" uid="uid://bbu7j5qv8dws3" path="res://scenes/bg/bg_green.tscn" id="1_opbqx"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://scenes/game_elements/ball/ball1_l3.gd" id="9_0xr4b"]
 [ext_resource type="PackedScene" uid="uid://bsrt8t0rnifpt" path="res://scenes/game_elements/score/hud.tscn" id="9_xn6to"]
 [ext_resource type="PackedScene" uid="uid://b08n85dunx8vk" path="res://scenes/game_elements/timer/timer.tscn" id="10_q0jh1"]
+[ext_resource type="PackedScene" uid="uid://didu13wkkn13a" path="res://scenes/game_elements/music/level_music.tscn" id="16_i678e"]
 
 [node name="Level3" type="Sprite2D"]
 script = ExtResource("1_b2esj")
@@ -57,6 +58,8 @@ color_text = Color(1, 0.792157, 0.188235, 1)
 [node name="BallTimer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="LevelMusic" parent="." instance=ExtResource("16_i678e")]
 
 [connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
 [connection signal="body_entered" from="Right" to="." method="_on_right_body_entered"]

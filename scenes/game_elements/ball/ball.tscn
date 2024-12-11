@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://djxmkj3xasvha"]
+[gd_scene load_steps=64 format=3 uid="uid://djxmkj3xasvha"]
 
 [ext_resource type="Texture2D" uid="uid://v8fj12nun4oo" path="res://assets/ball/1.png" id="1_0sf2i"]
 [ext_resource type="Texture2D" uid="uid://bi6tl36i1rp2u" path="res://assets/ball/2.png" id="2_bsuwf"]
@@ -60,6 +60,7 @@
 [ext_resource type="Texture2D" uid="uid://clqda4thum60y" path="res://assets/ball/58.png" id="58_nvfa4"]
 [ext_resource type="Texture2D" uid="uid://dyrhlxf1x1jvp" path="res://assets/ball/59.png" id="59_rqjo4"]
 [ext_resource type="Texture2D" uid="uid://x15vpp36eatf" path="res://assets/ball/60.png" id="60_glywg"]
+[ext_resource type="AudioStream" uid="uid://dtv6v805xesl8" path="res://assets/music/EM_FIRE_CAST_01.ogg" id="61_qouxj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2gan8"]
 
@@ -263,3 +264,8 @@ shape = SubResource("CircleShape2D_2gan8")
 sprite_frames = SubResource("SpriteFrames_8k7j8")
 animation = &"Idle"
 autoplay = "Idle"
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("61_qouxj")
+pitch_scale = 2.0
+bus = &"Ball"

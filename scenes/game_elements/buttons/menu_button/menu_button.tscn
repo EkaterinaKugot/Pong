@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://p2ln13x68loq"]
+[gd_scene load_steps=11 format=3 uid="uid://p2ln13x68loq"]
 
 [ext_resource type="FontFile" uid="uid://d3ftaug61a8t3" path="res://assets/fonts/Monocraft.otf" id="1_yey0p"]
 [ext_resource type="Texture2D" uid="uid://caogavl08w4b" path="res://assets/buttons/Silver/[1] Normal.png" id="2_tbsxn"]
 [ext_resource type="Texture2D" uid="uid://cljthxkbh18p3" path="res://assets/buttons/Silver/[2] Clicked.png" id="3_fesfw"]
+[ext_resource type="PackedScene" uid="uid://cjr0blrgvdu5m" path="res://scenes/game_elements/music/buttons_music.tscn" id="4_dpdml"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0gio5"]
 texture = ExtResource("2_tbsxn")
@@ -46,5 +47,7 @@ offset_bottom = 90.0
 mouse_default_cursor_shape = 2
 theme = SubResource("Theme_f31hj")
 keep_pressed_outside = true
+
+[node name="ButtonsMusic" parent="." instance=ExtResource("4_dpdml")]
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

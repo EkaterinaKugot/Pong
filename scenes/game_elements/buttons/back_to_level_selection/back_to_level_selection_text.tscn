@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dknc73h6hjkmq"]
+[gd_scene load_steps=4 format=3 uid="uid://dknc73h6hjkmq"]
 
 [ext_resource type="Theme" uid="uid://b3nypturfrnlw" path="res://scenes/game_elements/buttons/dialog_button.tres" id="1_upvpp"]
 [ext_resource type="Script" path="res://scenes/game_elements/buttons/back_to_level_selection/back_to_level_selection.gd" id="2_cit3w"]
+[ext_resource type="PackedScene" uid="uid://cjr0blrgvdu5m" path="res://scenes/game_elements/music/buttons_music.tscn" id="3_kuys2"]
 
 [node name="BackText" type="Button"]
 offset_right = 200.0
@@ -10,5 +11,7 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("1_upvpp")
 text = "Back"
 script = ExtResource("2_cit3w")
+
+[node name="ButtonsMusic" parent="." instance=ExtResource("3_kuys2")]
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,6 +1,7 @@
 extends Button
 
 func _on_pressed() -> void:
+	$"ButtonsMusic".play()
 	var level = 0
 	var root_node = $"../.."
 	if root_node.has_method("get_level"): 

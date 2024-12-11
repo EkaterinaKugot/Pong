@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://didu13wkkn13a"]
+
+[ext_resource type="AudioStream" uid="uid://cdvaxpn4dr1q5" path="res://assets/music/battle.wav" id="1_h8gx1"]
+
+[node name="LevelMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_h8gx1")
+autoplay = true
+bus = &"LevelMusic"

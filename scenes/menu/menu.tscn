@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmlg056jf5tgj"]
+[gd_scene load_steps=7 format=3 uid="uid://bmlg056jf5tgj"]
 
 [ext_resource type="Script" path="res://scenes/menu/menu.gd" id="1_o5mro"]
 [ext_resource type="Texture2D" uid="uid://bks8ec0p65fnh" path="res://assets/background/violet.png" id="2_siaa3"]
 [ext_resource type="Script" path="res://scenes/menu/play.gd" id="3_uoe3q"]
 [ext_resource type="Script" path="res://scenes/menu/quit.gd" id="4_tlo61"]
+[ext_resource type="FontFile" uid="uid://d3ftaug61a8t3" path="res://assets/fonts/Monocraft.otf" id="6_pjci5"]
 [ext_resource type="PackedScene" uid="uid://p2ln13x68loq" path="res://scenes/game_elements/buttons/menu_button/menu_button.tscn" id="8_lw117"]
 
 [node name="Menu" type="Node2D"]
@@ -15,16 +16,26 @@ texture = ExtResource("2_siaa3")
 
 [node name="Play" parent="." instance=ExtResource("8_lw117")]
 offset_left = 411.0
-offset_top = 175.667
+offset_top = 266.0
 offset_right = 741.0
-offset_bottom = 265.667
+offset_bottom = 356.0
 text = "Play"
 script = ExtResource("3_uoe3q")
 
 [node name="Quit" parent="." instance=ExtResource("8_lw117")]
 offset_left = 411.0
-offset_top = 382.333
+offset_top = 434.0
 offset_right = 741.0
-offset_bottom = 472.333
+offset_bottom = 524.0
 text = "Quit"
 script = ExtResource("4_tlo61")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 209.0
+offset_top = 70.0
+offset_right = 942.0
+offset_bottom = 181.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_pjci5")
+theme_override_font_sizes/font_size = 110
+text = "Cosmo Pong"

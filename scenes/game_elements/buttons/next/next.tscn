@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwoeqlgmoq44f"]
+[gd_scene load_steps=4 format=3 uid="uid://bwoeqlgmoq44f"]
 
 [ext_resource type="Theme" uid="uid://b3nypturfrnlw" path="res://scenes/game_elements/buttons/dialog_button.tres" id="1_6s2tk"]
 [ext_resource type="Script" path="res://scenes/game_elements/buttons/next/next.gd" id="2_po7b0"]
+[ext_resource type="PackedScene" uid="uid://cjr0blrgvdu5m" path="res://scenes/game_elements/music/buttons_music.tscn" id="3_ytad1"]
 
 [node name="Next" type="Button"]
 offset_right = 200.0
@@ -10,5 +11,7 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("1_6s2tk")
 text = "Next"
 script = ExtResource("2_po7b0")
+
+[node name="ButtonsMusic" parent="." instance=ExtResource("3_ytad1")]
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

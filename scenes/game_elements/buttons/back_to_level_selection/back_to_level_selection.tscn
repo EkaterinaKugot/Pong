@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ek76wfnau1kt"]
+[gd_scene load_steps=10 format=3 uid="uid://ek76wfnau1kt"]
 
 [ext_resource type="FontFile" uid="uid://d3ftaug61a8t3" path="res://assets/fonts/Monocraft.otf" id="1_y0brj"]
 [ext_resource type="Texture2D" uid="uid://cgxujeavatyed" path="res://assets/buttons/Arrow/arrow_left2.png" id="2_pn8vg"]
+[ext_resource type="PackedScene" uid="uid://cjr0blrgvdu5m" path="res://scenes/game_elements/music/buttons_music.tscn" id="3_qqijx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k8b4d"]
 
@@ -13,9 +14,12 @@ modulate_color = Color(0.917647, 0.92549, 0.933333, 1)
 texture = ExtResource("2_pn8vg")
 modulate_color = Color(0.917647, 0.92549, 0.933333, 1)
 
+[sub_resource type="GDScript" id="GDScript_2qxmb"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j61ge"]
 texture = ExtResource("2_pn8vg")
 modulate_color = Color(0.917647, 0.92549, 0.933333, 1)
+script = SubResource("GDScript_2qxmb")
 
 [sub_resource type="Theme" id="Theme_2lt8j"]
 Button/font_sizes/font_size = 50
@@ -30,3 +34,5 @@ offset_right = 75.0
 offset_bottom = 75.0
 mouse_default_cursor_shape = 2
 theme = SubResource("Theme_2lt8j")
+
+[node name="ButtonsMusic" parent="." instance=ExtResource("3_qqijx")]

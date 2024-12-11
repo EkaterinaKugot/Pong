@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://l7xl1ysj3xqo"]
+[gd_scene load_steps=4 format=3 uid="uid://l7xl1ysj3xqo"]
 
 [ext_resource type="Theme" uid="uid://b3nypturfrnlw" path="res://scenes/game_elements/buttons/dialog_button.tres" id="1_ivslw"]
 [ext_resource type="Script" path="res://scenes/game_elements/buttons/reset/reset.gd" id="2_gglci"]
+[ext_resource type="PackedScene" uid="uid://cjr0blrgvdu5m" path="res://scenes/game_elements/music/buttons_music.tscn" id="3_l8s52"]
 
 [node name="Reset" type="Button"]
 offset_right = 200.0
@@ -10,5 +11,7 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("1_ivslw")
 text = "Reset"
 script = ExtResource("2_gglci")
+
+[node name="ButtonsMusic" parent="." instance=ExtResource("3_l8s52")]
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

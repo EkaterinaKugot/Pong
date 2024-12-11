@@ -33,6 +33,8 @@ func _physics_process(delta):
 	var collider
 	if collision:
 		collider = collision.get_collider()
+		if not $"Sound".playing:
+			$"Sound".play()
 		if collider == player or collider == cpu:
 			if collider == player and get_parent().can_accel_player1:
 				get_parent().can_accel_cpu1 = true

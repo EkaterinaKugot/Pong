@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjr0blrgvdu5m"]
+
+[ext_resource type="AudioStream" uid="uid://b3gnsmtpjqqk7" path="res://assets/music/Minimalist11.ogg" id="1_i4lk5"]
+
+[node name="ButtonsMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_i4lk5")
+pitch_scale = 1.57
+bus = &"Buttons"

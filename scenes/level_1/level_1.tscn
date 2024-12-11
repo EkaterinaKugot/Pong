@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bq7xplhy6uxs5"]
+[gd_scene load_steps=15 format=3 uid="uid://bq7xplhy6uxs5"]
 
 [ext_resource type="PackedScene" uid="uid://bgceni31vwcuu" path="res://scenes/bg/bg_winter.tscn" id="1_cds7w"]
 [ext_resource type="Script" path="res://scenes/level_1/level_1.gd" id="1_qmjp0"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scenes/game_elements/buttons/back_to_level_selection/back_to_level_selection.gd" id="4_ablua"]
 [ext_resource type="PackedScene" uid="uid://yjcwhww4dpgj" path="res://scenes/game_elements/player/player.tscn" id="5_p1v0e"]
 [ext_resource type="PackedScene" uid="uid://cjj4e47k0kfve" path="res://scenes/game_elements/cpu/cpu.tscn" id="6_a4615"]
+[ext_resource type="PackedScene" uid="uid://didu13wkkn13a" path="res://scenes/game_elements/music/level_music.tscn" id="14_fdvxm"]
 [ext_resource type="PackedScene" uid="uid://djxmkj3xasvha" path="res://scenes/game_elements/ball/ball.tscn" id="131_mvxij"]
 [ext_resource type="Script" path="res://scenes/game_elements/ball/ball1_l1.gd" id="132_ktctk"]
 [ext_resource type="PackedScene" uid="uid://msa6h1lxo2qu" path="res://scenes/game_elements/borders/top_bot.tscn" id="191_ckr0w"]
@@ -47,7 +48,10 @@ one_shot = true
 autostart = true
 
 [node name="Timer" parent="." instance=ExtResource("192_s3dpj")]
+timer = 5.0
 color_text = Color(1, 0.792157, 0.188235, 1)
+
+[node name="LevelMusic" parent="." instance=ExtResource("14_fdvxm")]
 
 [connection signal="pressed" from="BackToLevelSelection" to="BackToLevelSelection" method="_on_pressed"]
 [connection signal="body_entered" from="Left" to="." method="_on_left_body_entered"]

@@ -32,6 +32,7 @@ func _ready():
 	window_size = get_viewport().size
 	player.process_mode = PROCESS_MODE_DISABLED
 	cpu.process_mode = PROCESS_MODE_DISABLED
+	MenuMusic.stop()
 	
 func _on_ball_timer_timeout():
 	player.process_mode = PROCESS_MODE_DISABLED

@@ -48,7 +48,7 @@ one_shot = true
 autostart = true
 
 [node name="Timer" parent="." instance=ExtResource("192_s3dpj")]
-timer = 5.0
+timer = 10.0
 color_text = Color(1, 0.792157, 0.188235, 1)
 
 [node name="LevelMusic" parent="." instance=ExtResource("14_fdvxm")]

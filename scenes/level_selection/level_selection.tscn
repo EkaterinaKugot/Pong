@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dsob7m6gyugc2"]
+[gd_scene load_steps=10 format=3 uid="uid://dsob7m6gyugc2"]
 
 [ext_resource type="Texture2D" uid="uid://dcg1b1jqru74p" path="res://assets/background/violet2.png" id="1_b8x1f"]
 [ext_resource type="Script" path="res://scenes/level_selection/level_selection.gd" id="1_hgjvw"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://p2ln13x68loq" path="res://scenes/game_elements/buttons/menu_button/menu_button.tscn" id="4_nrlyv"]
 [ext_resource type="Script" path="res://scenes/level_selection/level_2.gd" id="6_3110q"]
 [ext_resource type="Script" path="res://scenes/level_selection/level_3.gd" id="7_851jn"]
+[ext_resource type="FontFile" uid="uid://d3ftaug61a8t3" path="res://assets/fonts/Monocraft.otf" id="9_fs5qq"]
 
 [node name="LevelSelection" type="Node2D"]
 script = ExtResource("1_hgjvw")
@@ -21,26 +22,69 @@ script = ExtResource("3_wvjwr")
 
 [node name="Level1" parent="." instance=ExtResource("4_nrlyv")]
 offset_left = 51.0
-offset_top = 279.0
+offset_top = 234.0
 offset_right = 381.0
-offset_bottom = 369.0
+offset_bottom = 324.0
 text = "Level 1"
 script = ExtResource("2_wig53")
 
 [node name="Level2" parent="." instance=ExtResource("4_nrlyv")]
 offset_left = 411.0
-offset_top = 279.0
+offset_top = 234.0
 offset_right = 741.0
-offset_bottom = 369.0
+offset_bottom = 324.0
 text = "Level 2"
 script = ExtResource("6_3110q")
 
 [node name="Level3" parent="." instance=ExtResource("4_nrlyv")]
 offset_left = 771.0
-offset_top = 279.0
+offset_top = 234.0
 offset_right = 1101.0
-offset_bottom = 369.0
+offset_bottom = 324.0
 text = "Level 3"
 script = ExtResource("7_851jn")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 51.0
+offset_top = 407.0
+offset_right = 385.0
+offset_bottom = 524.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_fs5qq")
+theme_override_font_sizes/font_size = 20
+text = "Regular Pong.
+Victory: score once or 
+survive the allotted time
+Lost: the computer scored 
+3 times."
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 410.0
+offset_top = 407.0
+offset_right = 770.0
+offset_bottom = 572.0
+theme_override_fonts/font = ExtResource("9_fs5qq")
+theme_override_font_sizes/font_size = 20
+text = "Pong with random 
+acceleration or 
+deceleration after 
+hitting.
+Victory: score once or 
+survive the allotted time
+Lose: the computer scored 
+2 times."
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 771.0
+offset_top = 407.0
+offset_right = 1150.0
+offset_bottom = 482.0
+theme_override_fonts/font = ExtResource("9_fs5qq")
+theme_override_font_sizes/font_size = 20
+text = "Pong with two balls.
+Victory: score 2 times or 
+survive the allotted time
+Lose: the computer scored 
+2 times."
 
 [connection signal="pressed" from="Back" to="Back" method="_on_pressed"]

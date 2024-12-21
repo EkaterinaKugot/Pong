@@ -44,7 +44,7 @@ color_player = Color(1, 1, 0.380392, 1)
 color_cpu = Color(1, 0.54902, 0.196078, 1)
 
 [node name="Timer" parent="." instance=ExtResource("13_a5w1r")]
-timer = 5.0
+timer = 10.0
 color_text = Color(1, 0.792157, 0.188235, 1)
 
 [node name="BallTimer" type="Timer" parent="."]
